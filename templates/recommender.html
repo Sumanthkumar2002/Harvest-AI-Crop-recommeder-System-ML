@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>crop recommender</title>
+</head>
+<body>
+    <nav class="fixed top-0 left-0 right-0 z-10 bg-gradient-to-r from-gray-700 via-gray-900 to-black w-full h-20">
+        <div class="container px-10">
+          <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+               <img class="w-20 h-20 mt-2" src="static\images\l.png" alt="" srcset="">
+            </div>
+            <div class="flex mr-7">
+              <a href="{{url_for("index")}}" class="text-gray-300 hover:text-white px-3 py-2">Home</a>
+                </div>
+          </div>
+        </div>
+      </nav>
+      <div class="mt-28 text-center font-bold text-lg">Discover the Perfect Crop: Uncover the Most Suitable Choice to Cultivate in Your Field</div>
+     <div class="flex justify-center items-center ">
+
+          <form class="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4 mt-9 w-80" method="post" >
+              <div class="mb-4">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="nitrogen">Nitrogen Level</label>
+                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="nitrogen" name="nitrogen" type="text" placeholder="Enter nitrogen level (example:50)" required />
+              </div>
+              <div class="mb-4">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="potassium">Potassium Level</label>
+                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="potassium" name="potassium" type="text" placeholder="Enter potassium level (example:50)" required />
+              </div>
+              <div class="mb-4">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="phosphorous">Phosphorous Level</label>
+                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="phosphorous" name="phosphorous" type="text" placeholder="Enter phosphorous level (example:50)" required/>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="ph">Temperature</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="temp" name="temp" type="text" placeholder="Enter temperature level in celsius" required />
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="ph">Humidity</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="humidity" name="humidity" type="text" placeholder="Enter humidity level (example:50)" required />
+          </div>
+              <div class="mb-4">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="ph">pH Level</label>
+                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="ph" name="ph" type="text" placeholder="Enter pH level (example:50)" required />
+              </div>
+              <div class="mb-4">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="rainfall">Rainfall</label>
+                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="rainfall" name="rainfall" type="text" placeholder="Enter rainfall in mm" required />
+              </div>
+                 
+                <div class="flex items-center justify-between">
+                   
+                  <button class=" butn bg-blue-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                   value="submit"   type="submit" name="btnn" id="btnn" formaction="/crop_recommender"> Predict</button>  
+              </div>
+             
+          </form>
+          
+</body>
+</html>
