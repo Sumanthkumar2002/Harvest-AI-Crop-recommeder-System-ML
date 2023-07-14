@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for,request,redirect
 import pickle,numpy as np
 import sklearn
+import os
 app=Flask(__name__)
 
 @app.route('/')
@@ -38,7 +39,8 @@ def cropresult():
     return render_template('resultcrop.html',ress=res)
 
 def predict(n,k,p,temp,humid,ph,rf):
-    with open('model\RF.pkl', 'rb') as f:
+    model_path = os.path.join('model', 'RF.pkl')
+    with open(model_path, 'rb') as f:
         model = pickle.load(f)
     data = np.array([[n,p, k, temp, humid, ph, rf]])
     prediction = model.predict(data)
